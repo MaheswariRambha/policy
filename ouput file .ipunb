@@ -1,0 +1,113 @@
+[
+  {
+    "claim_id": "CLM-001",
+    "decision": "APPROVE",
+    "approved_amount": 1110.00,
+    "deducted_amount": 0.00,
+    "missing_docs": [],
+    "policy_refs": [
+      "POL-CAT-01",
+      "POL-PD-01",
+      "POL-PD-02",
+      "POL-AIR-01",
+      "POL-APR-02",
+      "POL-RCT-01",
+      "POL-TIME-01"
+    ],
+    "confidence": 0.98,
+    "explanation": "All expenses are eligible, receipts are attached, and meal and lodging expenses are within policy limits. The total reimbursable amount is $1,110, within the manager approval tier.",
+    "tools_used": [
+      "policy_lookup",
+      "receipt_check",
+      "limit_checker",
+      "approval_threshold_checker"
+    ]
+  },
+  {
+    "claim_id": "CLM-002",
+    "decision": "REJECT",
+    "approved_amount": 0.00,
+    "deducted_amount": 380.00,
+    "missing_docs": [],
+    "policy_refs": [
+      "POL-CAT-02"
+    ],
+    "confidence": 0.99,
+    "explanation": "The spa package ($300) and minibar charges ($80) are ineligible expenses. The entire claim is rejected.",
+    "tools_used": [
+      "policy_lookup",
+      "receipt_check",
+      "limit_checker",
+      "approval_threshold_checker"
+    ]
+  },
+  {
+    "claim_id": "CLM-003",
+    "decision": "PARTIAL_APPROVE",
+    "approved_amount": 840.00,
+    "deducted_amount": 100.00,
+    "missing_docs": [],
+    "policy_refs": [
+      "POL-CAT-01",
+      "POL-PD-01",
+      "POL-PD-02",
+      "POL-AIR-01",
+      "POL-APR-02",
+      "POL-RCT-01",
+      "POL-TIME-01"
+    ],
+    "confidence": 0.99,
+    "explanation": "Economy airfare ($300) and meals ($140) are reimbursable. Lodging is capped at $200 per night for two nights, allowing $400 of the $500 claimed. The remaining $100 is deducted.",
+    "tools_used": [
+      "policy_lookup",
+      "receipt_check",
+      "limit_checker",
+      "approval_threshold_checker"
+    ]
+  },
+  {
+    "claim_id": "CLM-004",
+    "decision": "MANUAL_REVIEW",
+    "approved_amount": 0.00,
+    "deducted_amount": 0.00,
+    "missing_docs": [
+      "Hotel, 3 nights"
+    ],
+    "policy_refs": [
+      "POL-AIR-01",
+      "POL-APR-03",
+      "POL-RCT-02"
+    ],
+    "confidence": 0.99,
+    "explanation": "Manual review is required because the claim includes business-class airfare, the lodging receipt is missing, and the total claimed amount exceeds $2,000. No final reimbursement amount is confirmed until review.",
+    "tools_used": [
+      "policy_lookup",
+      "receipt_check",
+      "limit_checker",
+      "approval_threshold_checker",
+      "airfare_policy_check"
+    ]
+  },
+  {
+    "claim_id": "CLM-005",
+    "decision": "MANUAL_REVIEW",
+    "approved_amount": 0.00,
+    "deducted_amount": 0.00,
+    "missing_docs": [
+      "Client dinner for 4 (business development)"
+    ],
+    "policy_refs": [
+      "POL-RCT-02",
+      "POL-RCT-01",
+      "POL-PD-01"
+    ],
+    "confidence": 0.99,
+    "explanation": "The $220 client dinner exceeds the $25 receipt threshold, but the required receipt is missing. Manual review is required before determining the final reimbursable amount.",
+    "tools_used": [
+      "policy_lookup",
+      "receipt_check",
+      "limit_checker",
+      "approval_threshold_checker"
+    ]
+  }
+]
